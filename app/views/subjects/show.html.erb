@@ -1,0 +1,26 @@
+<div class="text-center well">
+  <h2>Темы сайта</h2>
+  <h3>Вы вошли как: <%= session[:name] %></h3>
+  <table class="table">
+	  <thead>
+	    <tr>
+	      <th>ID</th>
+	      <th>Position</th>
+	      <th>Title</th>
+	      <th>Visible</th>
+	      <th>Изменить</th>
+	      <th>Удалить</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+  	    <tr>
+	      <th scope="row"><%= @subject.id %></th>
+	      <td><%= @subject.position %></td>
+	      <td><%= link_to @subject.title, @subject %></td>
+	      <td><%= @subject.visible %></td>
+	      <td><%= link_to "Изменить", "#", class: "btn btn-warning" %></td>
+	      <td><%= link_to "Удалить", @subject, method: :delete, class: "btn btn-danger", data: { confirm: "Вы уверены?" } %></td>
+	    </tr>
+	  </tbody>
+	</table>
+</div>
